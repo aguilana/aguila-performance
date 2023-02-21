@@ -1,35 +1,37 @@
-const Dotenv = require("dotenv-webpack");
+const Dotenv = require('dotenv-webpack');
 module.exports = {
-  entry: ["./src/index.js"],
+  entry: ['./src/index.js'],
   output: {
-    path: __dirname + "/public",
-    filename: "bundle.js",
+    path: __dirname + '/public',
+    filename: 'bundle.js',
   },
   context: __dirname,
-  devtool: "source-map",
+  devtool: 'source-map',
 
   // this allows .env to happen
   plugins: [
     new Dotenv({
-      path: ".env", // or '.env.local', '.env.[mode]', etc.
+      path: '.env', // or '.env.local', '.env.[mode]', etc.
     }),
   ],
-
   module: {
     rules: [
       {
         // this allows css styling loader
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: ['style-loader', 'css-loader'],
       },
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
         options: {
-          presets: ["@babel/preset-env", "@babel/preset-react"],
+          presets: ['@babel/preset-env', '@babel/preset-react'],
         },
       },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx'],
   },
 };

@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
+import { Navbar } from './components';
+import AppRoutes from './setup/routes-manager';
 
 const App = () => {
-  console.log("PROCESS", process.env.JWT);
   return (
-    <div>
-      <h1>THIS IS THE APP</h1>
-    </div>
+    <>
+      <Navbar />
+      <AppRoutes />
+    </>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { authenticate } from "../../store/store";
+import { authenticate } from "../store/store";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 
