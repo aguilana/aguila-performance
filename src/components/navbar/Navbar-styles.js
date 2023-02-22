@@ -8,49 +8,38 @@ export const Container = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-export const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid #2ecc71;
-  color: rgba(46, 204, 113, 0.8);
-  margin: 0 1em;
-  padding: 0.25em 1em;
-  font-size: 1em;
-  cursor: pointer;
-  &:hover {
-    background: #2ecc71;
-    color: white;
-  }
+  padding: 5px 10px;
 `;
 
 export const Title = styled.h4`
   color: black;
   font-size: 1.5em;
   font-weight: 700;
+  margin: 0;
+  padding: 5px 10px;
 `;
 
 export const AppBar = styled.div`
   width: 100%;
   height: 100%;
+  padding: 5px 10px;
   background: #f5f5f5;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
 
-export const Ul = styled.ul`
+export const NavMenuUl = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   list-style: none;
   flex: 1;
-  padding: 0 2em;
+  margin: 0;
+  padding: 1em 2em;
 `;
 
-export const ListItem = styled.li`
-  padding: 0 1em;
+export const NavItem = styled.li`
   list-style: none;
   text-decoration: none;
   color: black;
@@ -63,9 +52,41 @@ export const ListItem = styled.li`
 `;
 
 export const NavLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
   color: black;
+  padding: 0.5em 1em;
   &:hover {
     color: gray;
+  }
+`;
+
+export const DropdownMenu = styled.ul`
+  position: absolute;
+  top: 100%;
+  display: block;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`;
+
+export const DropdownItem = styled.li`
+  background-color: #000;
+  padding: 10px;
+  margin: 0;
+`;
+
+export const DropdownLink = styled(Link)`
+  color: black;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+`;
+
+export const NavItemWithDropdown = styled(NavItem)`
+  &:hover ${DropdownMenu} {
+    display: block;
   }
 `;
